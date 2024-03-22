@@ -1,0 +1,186 @@
+.container .settings-page {
+  .navigation-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+
+    button {
+      padding: 6px 8px;
+    }
+  }
+
+  .settings-container {
+    padding: 10px 0;
+
+    .settings-section {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 8px;
+    }
+
+    .general {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      .general-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+      }
+
+      .size-select-wrapper {
+        select {
+          border: none;
+          outline: none;
+          background-color: var(--header-bg);
+          color: var(--page-color);
+          padding: 6px 3px;
+        }
+      }
+    }
+
+    .gameplay {
+      .players {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+
+        .player {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p {
+              text-transform: capitalize;
+              font-size: 15px;
+              font-weight: 500;
+            }
+
+            input {
+              border: none;
+              outline: none;
+              padding: 6px 3px;
+              background-color: var(--header-bg);
+              color: var(--page-color);
+            }
+          }
+        }
+      }
+    }
+
+    .visual {
+      .board-theme {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          text-transform: capitalize;
+        }
+
+        .themes {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          gap: 10px;
+
+          .color {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &.active {
+              opacity: 0.5;
+            }
+
+            &.smooth-purple {
+              background-color: #ad88c6;
+            }
+
+            &.black {
+              background-color: #393e46;
+            }
+
+            &.pink {
+              background-color: #ffc7c7;
+            }
+
+            &.purple {
+              background-color: #6a2c70;
+            }
+
+            &.blue {
+              background-color: #769fcd;
+            }
+
+            &.light-smooth-purple {
+              background-color: #c3aed6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .game-actions {
+    margin-top: 8px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container .settings-page {
+    .navigation-actions {
+      padding: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container .settings-page {
+    .navigation-actions {
+      padding: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container .settings-page {
+    .navigation-actions {
+      padding: 8px;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container .settings-page {
+    .play-info {
+      width: 992px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container .settings-page {
+    .play-info {
+      width: 1200px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "./styles/components/components.scss";
+@import "./styles/classes.scss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  --page-bg: #fff;
+  --page-color: #333;
+  --header-bg: #f2f2f2;
+  --accent-color: #9dc1ff;
+
+  .dark {
+    --page-bg: #333;
+    --page-color: #fff;
+    --header-bg: #1a1a1a;
+    --accent-color: #c3aed6;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--page-color);
+}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/style.scss" />
+    <title>Tic Tac Toe | aissa-dev1</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <h3>Tic Tac Toe</h3>
+
+      <p>Play, have fun, repeat</p>
+    </header>
+
+    <main class="container">
+      <section class="page home-page hidden">
+        <div class="texts">
+          <h3>Welcome chief!</h3>
+        </div>
+
+        <div class="actions">
+          <button class="to-game-page styled-btn">Play</button>
+          <button class="to-settings-page styled-btn">Settings</button>
+        </div>
+      </section>
+
+      <section class="page game-page hidden">
+        <div class="navigation-actions">
+          <button class="to-home-page styled-btn">Exit</button>
+          <button class="to-settings-page styled-btn">Settings</button>
+        </div>
+
+        <div class="play-info">
+          <div class="card">
+            <h4 class="name"><span id="player1_name"></span> | <span id="player1_char"></span></h4>
+            <p id="player1_score" class="score">0</p>
+          </div>
+
+          <div class="card">
+            <h4 class="name">Tie</h4>
+            <p id="tie_score" class="score">0</p>
+          </div>
+
+          <div class="card">
+            <h4 class="name"><span id="player2_name"></span> | <span id="player2_char"></span></h4>
+            <p id="player2_score" class="score">0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="page settings-page hidden">
+        <div class="navigation-actions">
+          <button class="to-home-page styled-btn">Back home</button>
+          <button class="to-game-page styled-btn">Play</button>
+        </div>
+
+        <div class="settings-container">
+          <h1>Settings</h1>
+
+          <div class="general settings-section">
+            <h2>General</h2>
+
+            <div class="general-section switch-wrapper dark-mode-wrapper">
+              <p>Enable dark mode</p>
+            </div>
+
+            <div class="general-section switch-wrapper game-music-wrapper">
+              <p>Enable game music</p>
+            </div>
+
+            <div class="general-section switch-wrapper sound-effects-wrapper">
+              <p>Enable sound effects</p>
+            </div>
+
+            <div class="size-select-wrapper general-section">
+              <p for="board-size">Board Size</p>
+
+              <select name="board-size" id="board_size">
+                <option value="3">3x3</option>
+                <option value="4">4x4</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="gameplay settings-section">
+            <h2>Gameplay</h2>
+
+            <div class="players">
+              <div class="player player1">
+                <div>
+                  <p>Player 1 name</p>
+
+                  <input id="player1_name_input" type="text" placeholder="Example: Player 1" />
+                </div>
+
+                <div>
+                  <p>Player 1 character</p>
+
+                  <input id="player1_char_input" type="text" placeholder="Example: X" />
+                </div>
+              </div>
+
+              <div class="player player2">
+                <div>
+                  <p>Player 2 name</p>
+
+                  <input id="player2_name_input" type="text" placeholder="Example: Player 2" />
+                </div>
+
+                <div>
+                  <p>Player 2 character</p>
+
+                  <input id="player2_char_input" type="text" placeholder="Example: O" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="visual settings-section">
+            <h2>Visual</h2>
+
+            <div class="board-theme">
+              <p>Board theme</p>
+
+              <div class="themes">
+                <div class="color smooth-purple" data-color="#AD88C6"></div>
+                <div class="color black" data-color="#393E46"></div>
+                <div class="color pink" data-color="#FFC7C7"></div>
+                <div class="color purple" data-color="#6A2C70"></div>
+                <div class="color blue" data-color="#769FCD"></div>
+                <div class="color light-smooth-purple active" data-color="#C3AED6"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

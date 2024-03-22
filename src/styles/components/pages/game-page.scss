@@ -1,0 +1,152 @@
+.container .game-page {
+  .navigation-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+
+    button {
+      padding: 6px 8px;
+    }
+  }
+
+  .board {
+    div {
+      background-color: var(--page-bg);
+
+      p {
+        animation: textFade 0.3s ease-in;
+
+        &.signal {
+          animation: textSignal 0.5s infinite;
+        }
+      }
+    }
+  }
+
+  .play-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    position: fixed;
+    bottom: 0;
+    background-color: var(--header-bg);
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 4px 0;
+      background-color: var(--page-bg);
+      color: var(--page-color);
+
+      h4 {
+        text-transform: capitalize;
+      }
+
+      &:first-child,
+      &:last-child {
+        grid-column: span 2;
+      }
+
+      .score {
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container .game-page {
+    .board {
+      width: 100% !important;
+    }
+
+    .navigation-actions,
+    .play-info {
+      padding: 5px;
+    }
+
+    .play-info {
+      width: 100%;
+      left: 0;
+      gap: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .container .game-page {
+    .navigation-actions,
+    .play-info {
+      padding: 5px;
+    }
+
+    .play-info {
+      width: 600px;
+      left: auto;
+      gap: 5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container .game-page {
+    .navigation-actions,
+    .play-info {
+      padding: 8px;
+    }
+
+    .play-info {
+      width: 768px;
+      gap: 10px;
+
+      .card {
+        gap: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .container .game-page {
+    .play-info {
+      width: 992px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .container .game-page {
+    .play-info {
+      width: 1200px;
+    }
+  }
+}
+
+@keyframes textFade {
+  0% {
+    opacity: 0;
+    font-size: 0;
+  }
+
+  50% {
+    opacity: 0.75;
+    font-size: 70px;
+  }
+
+  100% {
+    opacity: 1;
+    font-size: 50px;
+  }
+}
+
+@keyframes textSignal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
