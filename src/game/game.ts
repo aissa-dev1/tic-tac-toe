@@ -112,7 +112,11 @@ class TicTacToe {
   }
 
   private checkPlayersTie() {
-    if (!this._winOccured && this._choices.length === this._board.size ** 2 && typeof this._winner === "undefined") {
+    if (
+      !this._winOccured &&
+      this._choices.length === this._board.size ** 2 &&
+      typeof this._winner === "undefined"
+    ) {
       this.endGame(undefined);
     }
   }
@@ -319,7 +323,13 @@ class TicTacToe {
       return;
     }
 
-    this._board.startBoardRGB(document.getElementById("board") as HTMLDivElement);
+    this._board.startBoardRGB(
+      document.getElementById("board") as HTMLDivElement
+    );
+
+    this._board.updateBoardMeasurments(
+      document.getElementById("board") as HTMLDivElement
+    );
 
     this._board.startCharElmRGB();
 

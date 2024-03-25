@@ -14,7 +14,11 @@ class Board {
   private _boardColorPosition = "right";
   private _charColorPosition = "top";
 
-  constructor(private _width: number, private _height: number, private _size: BoardSize) {}
+  constructor(
+    private _width: number,
+    private _height: number,
+    private _size: BoardSize
+  ) {}
 
   createBoardContainer(game: TicTacToe): HTMLDivElement {
     const boardContainer = document.createElement("div");
@@ -73,6 +77,24 @@ class Board {
     }
   }
 
+  updateBoardMeasurments(boardContainer: HTMLDivElement) {
+    const currentWindowWidth = window.innerWidth;
+
+    if (currentWindowWidth <= 600) {
+      this._width = window.innerHeight / 2;
+      this._height = window.innerHeight / 2;
+
+      boardContainer.style.width = `${this._width}px`;
+      boardContainer.style.height = `${this._height}px`;
+    } else {
+      this._width = this._width;
+      this._height = this._height;
+
+      boardContainer.style.width = `${this._width}px`;
+      boardContainer.style.height = `${this._height}px`;
+    }
+  }
+
   startCharElmRGB() {
     const boardContainer = document.getElementById("board");
 
@@ -119,7 +141,11 @@ class Board {
         continue;
       }
 
-      if (!boardCell.hasAttribute("data-char") || boardCell.dataset.char !== winner.char) continue;
+      if (
+        !boardCell.hasAttribute("data-char") ||
+        boardCell.dataset.char !== winner.char
+      )
+        continue;
 
       boardCell.children[0].classList.add("signal");
     }
@@ -135,6 +161,10 @@ class Board {
 
   changeAccentColor(color: string) {
     this._accentColor = color;
+  }
+
+  get size(): BoardSize {
+    return this._size;
   }
 
   private manageBoardStyling(boardContainer: HTMLDivElement) {
@@ -186,14 +216,22 @@ class Board {
     return boardCell;
   }
 
-  private boardCellClick(game: TicTacToe, boardCell: HTMLDivElement, index: number) {
+  private boardCellClick(
+    game: TicTacToe,
+    boardCell: HTMLDivElement,
+    index: number
+  ) {
     if (boardCell.hasAttribute("data-char") || !this._allowDraw) return;
 
     boardCell.appendChild(this.createCharElm(game.currentPlayer.char));
 
     boardCell.dataset.char = game.currentPlayer.char;
 
-    game.choices.push({ name: game.currentPlayer.name, char: game.currentPlayer.char, position: index });
+    game.choices.push({
+      name: game.currentPlayer.name,
+      char: game.currentPlayer.char,
+      position: index,
+    });
 
     if (settings.soundEffects) {
       soundController.play(soundController.chooseSound);
@@ -221,10 +259,6 @@ class Board {
     choice.style.textTransform = "uppercase";
 
     return choice;
-  }
-
-  get size(): BoardSize {
-    return this._size;
   }
 }
 
